@@ -1,0 +1,62 @@
+===== eigen_analysis.py =====
+alpha = 0.02
+beta  = 0.135
+d     = 0.1
+critical c* = 0.011851851851851851
+
+c = 0.004
+   trace = -0.12  det = 0.00254  disc = 0.00424
+   eigenvalues from formula: -0.027442358807800583 -0.09255764119219942
+   eigenvalues from numpy:   [-0.02744236+0.j -0.09255764+0.j]
+   node  zeta = 1.1905  period = 0
+c = 0.01185
+   trace = -0.12  det = 0.0036  disc = 0.0
+   eigenvalues from formula: -0.05999999906867743 -0.06000000093132258
+   eigenvalues from numpy:   [-0.06+7.95520473e-10j -0.06-7.95520473e-10j]
+   critical (repeated root)  zeta = 1.0  period = 0
+c = 0.04
+   trace = -0.12  det = 0.0074  disc = -0.0152
+   eigenvalues from formula: (-0.060000000000000005+0.06164414002968976j) (-0.060000000000000005-0.06164414002968976j)
+   eigenvalues from numpy:   [-0.06+0.06164414j -0.06-0.06164414j]
+   spiral  zeta = 0.6975  period = 101.9
+c = 0.15
+   trace = -0.12  det = 0.02225  disc = -0.0746
+   eigenvalues from formula: (-0.060000000000000005+0.13656500283747663j) (-0.060000000000000005-0.13656500283747663j)
+   eigenvalues from numpy:   [-0.06+0.136565j -0.06-0.136565j]
+   spiral  zeta = 0.4022  period = 46.0
+c = 0.4
+   trace = -0.12  det = 0.056  disc = -0.2096
+   eigenvalues from formula: (-0.060000000000000005+0.22891046284519195j) (-0.060000000000000005-0.22891046284519195j)
+   eigenvalues from numpy:   [-0.06+0.22891046j -0.06-0.22891046j]
+   spiral  zeta = 0.2535  period = 27.4
+eigen figures done
+===== simulations.py =====
+c = 0.04 run
+  peak glucose 145.44 at t = 25.0
+  min glucose 87.07 at t = 66.45
+  peak insulin 21.83 at t = 34.35
+  at t = 400: G = 90.0  I = 10.0
+  c, peak rise, undershoot, settling time, peak insulin
+   0.004, 56.93, 0.0, 125.3, 11.52
+   0.0119, 56.6, 0.0, 76.0, 14.19
+   0.04, 55.44, 2.93, 58.6, 21.83
+   0.15, 51.13, 13.84, 59.8, 41.69
+   0.4, 42.52, 30.69, 65.2, 69.33
+  D = 30.0  max |G_nonlinear - G_linear| = 1.598
+  D = 60.0  max |G_nonlinear - G_linear| = 5.866
+  D = 150.0  max |G_nonlinear - G_linear| = 29.721
+  rk4 vs solve_ivp: max diff in G = 0.14228510101089853
+simulation figures done
+===== phase_plane.py =====
+phase plane figures done
+===== type1_diabetes.py =====
+Type-1 equilibrium: G* = 360.0  I* = 0.0
+Jacobian:
+[[-0.005 -0.54 ]
+ [ 0.    -0.1  ]]
+eigenvalues: [-0.005+0.j -0.1  +0.j]
+1/b = 200.0 min
+healthy  G at 1200 = 90.0  max G = 145.44  I at 1200 = 10.0
+type 1   G at 1200 = 359.46  max G = 359.46  I at 1200 = 0.0
+   type 1 glucose goes above 180 at t = 38.8
+type 1 figures done
